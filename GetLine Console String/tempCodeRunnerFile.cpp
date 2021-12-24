@@ -1,0 +1,1 @@
+    string kalimat_input;
