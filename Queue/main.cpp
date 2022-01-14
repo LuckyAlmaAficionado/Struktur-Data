@@ -147,8 +147,7 @@ void viewArray()
       }
     }
   }
-  cout << "\n"
-       << endl;
+  cout << endl;
 }
 
 // siapin ruang antrian

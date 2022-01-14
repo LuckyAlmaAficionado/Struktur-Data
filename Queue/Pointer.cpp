@@ -6,7 +6,7 @@ struct queue
 {
     int arrQ[Maxx];
 
-}QueuePointer;
+} QueuePointer;
 
 // declare var global
 int head, tail;
@@ -19,38 +19,41 @@ void inisialisasi(queue *s)
 
 bool IsEmpty()
 {
-    if(tail == -1){
+    if (tail == -1)
+    {
         return true;
     }
-    else{
+    else
+    {
         return false;
     }
 }
 
-
-void enqueue(queue *s, int data){
+void enqueue(queue *s, int data)
+{
     if (IsEmpty() == true)
     {
         tail++;
         head++;
         s->arrQ[head] = data;
     }
-    else 
+    else
     {
         tail++;
         s->arrQ[tail] = data;
     }
 }
 
-void enMiddleQueue(queue *s, int data, int posisi){
-    if( posisi == head || posisi == tail)
+void enMiddleQueue(queue *s, int data, int posisi)
+{
+    if (posisi == head || posisi == tail)
     {
         cout << "Tidak bisa menambahkan di awal atau akhir" << endl;
     }
     else
     {
         tail++;
-        
+
         for (int i = posisi; i <= tail; i++)
         {
             s->arrQ[posisi + 1] = s->arrQ[posisi];
@@ -67,34 +70,38 @@ void DequeueMiddle(queue *s, int posisi)
 {
     for (int i = posisi; i <= tail; i++)
     {
-        s->arrQ[i] = s->arrQ[i+1]; 
+        s->arrQ[i] = s->arrQ[i + 1];
     }
     tail--;
 }
 
-void DequeueLast(queue *s){
+void DequeueLast(queue *s)
+{
     tail--;
 }
 
 void DequeueFirst(queue *s)
 {
-    for(int i = head; i <= tail; i++)
+    for (int i = head; i <= tail; i++)
     {
         s->arrQ[i] = s->arrQ[i + 1];
     }
     tail--;
 }
 
-void edtFirst(queue *s, int data){
+void edtFirst(queue *s, int data)
+{
     s->arrQ[head] = data;
 }
 
-void edtLast(queue *s, int data){
+void edtLast(queue *s, int data)
+{
     s->arrQ[tail] = data;
 }
 
-void edtMiddle(queue *s, int data, int posisi){
-    if (posisi == head || posisi==tail)
+void edtMiddle(queue *s, int data, int posisi)
+{
+    if (posisi == head || posisi == tail)
     {
         cout << "Hanya untuk posisi di tengah" << endl;
     }
@@ -106,9 +113,10 @@ void edtMiddle(queue *s, int data, int posisi){
 
 void PrintDisplay(queue *s)
 {
-    for(int i = head; i <= tail; i++)
+    for (int i = head; i <= tail; i++)
     {
-        cout << "Posisi ke-" << i << " " << " [ " << s->arrQ[i] << " ] " << endl; 
+        cout << "Posisi ke-" << i << " "
+             << " [ " << s->arrQ[i] << " ] " << endl;
     }
 }
 
@@ -123,7 +131,7 @@ void PrintDisplay(queue *s)
 // 		cout<<"2. Dequeue"<<endl;
 // 		cout<<"3. PrintDisplay Queue"<<endl;
 // 		cout<<"4. Keluar Program"<<endl;
-// 		cout<<"Pilih metode : "; 
+// 		cout<<"Pilih metode : ";
 //         cin>>option;
 
 //         if(option == 1)
@@ -153,7 +161,8 @@ void PrintDisplay(queue *s)
 //     return 0;
 // }
 
-int main(){
+int main()
+{
     inisialisasi(&QueuePointer);
     enqueue(&QueuePointer, 1);
     enqueue(&QueuePointer, 2);
@@ -162,9 +171,8 @@ int main(){
     enqueue(&QueuePointer, 5);
     enqueue(&QueuePointer, 6);
     enqueue(&QueuePointer, 7);
-    enMiddleQueue(&QueuePointer, 100, 5);
-
-
+    DequeueFirst(&QueuePointer);
+    // enMiddleQueue(&QueuePointer, 100, 5);
 
     PrintDisplay(&QueuePointer);
 }
