@@ -1,4 +1,4 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
 struct STACK
@@ -9,21 +9,25 @@ struct STACK
 
 STACK tumpuk;
 
-void push(int input){
+void push(int input)
+{
     tumpuk.top++;
     tumpuk.data[tumpuk.top] = input;
 }
 
-int pop(){
+int pop()
+{
     return tumpuk.data[tumpuk.top];
 }
 
-void setawal(){
+void setawal()
+{
     tumpuk.top = -1;
 }
 
-bool isEmpty(){
-    if(tumpuk.top == -1)
+bool isEmpty()
+{
+    if (tumpuk.top == -1)
     {
         return 1;
     }
@@ -33,8 +37,9 @@ bool isEmpty(){
     }
 }
 
-bool isFull(){
-    if(tumpuk.top == 9)
+bool isFull()
+{
+    if (tumpuk.top == 9)
     {
         return 1;
     }
@@ -44,33 +49,34 @@ bool isFull(){
     }
 }
 
-void print(){
+void print()
+{
     int i;
     cout << "Data: " << endl;
     for (int i = 0; i <= tumpuk.top; i++)
     {
-        cout << tumpuk.data[i] << " " ;
+        cout << tumpuk.data[i] << " ";
         cout << endl;
     }
-    
 }
 
-int main(){
+int main()
+{
     int pilih, input;
     setawal();
     do
     {
-        cout << "1. push data"<< endl; 
-        cout << "2. pop data"<< endl; 
-        cout << "3. print data"<< endl; 
-        cout << "4. clear data"<< endl; 
-        cout << "5. exit"<< endl; 
+        cout << "1. push data" << endl;
+        cout << "2. pop data" << endl;
+        cout << "3. print data" << endl;
+        cout << "4. clear data" << endl;
+        cout << "5. exit" << endl;
         cout << "Pilih : ";
         cin >> pilih;
         switch (pilih)
         {
         case 1:
-            if(isFull() == 1)
+            if (isFull() == 1)
             {
                 cout << "Tumpukan Penuh" << endl;
             }
@@ -89,10 +95,10 @@ int main(){
             else
             {
                 cout << "Data yang di pop " << pop() << endl;
-            }          
-            break;  
+            }
+            break;
         case 3:
-            if(isEmpty()==1)
+            if (isEmpty() == 1)
             {
                 cout << "Tumpukan kosong";
             }

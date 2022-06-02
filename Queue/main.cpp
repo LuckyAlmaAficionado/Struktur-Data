@@ -310,8 +310,7 @@ void displayLinkedList()
     }
   }
 
-  cout << "\n"
-       << endl;
+  cout << endl;
 }
 
 int main()

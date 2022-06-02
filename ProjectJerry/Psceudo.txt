@@ -1,0 +1,51 @@
+    float IPK = 2.5;
+    string nilai = "C";
+    string nilaiMKWU = "C";
+    int SPNA = 30;
+    string nilaiMKWP = "D";
+    COMMENT : mengikuti == true / tidak mengikuti == false
+    bool MKPN = true;
+    string NU = "D";
+    int tingkat = 1;
+    IF (IPK >= 2.5)
+        IF (nilai == "A" || nilai == "B" || nilai == "C")
+            IF (nilaiMKWU == "A" || nilaiMKWU == "B" || nilaiMKWU == "C")
+                IF (SPNA <= 30)
+                    IF (nilaiMKWP == "A" || nilaiMKWP == "B" || nilaiMKWP == "C" || nilaiMKWP == "D")
+                        IF (MKPN == true)                      
+                            NU = "C";                       
+                        ELSE                       
+                            IF (tingkat == 1)                            
+                                print("Drop Out")                            
+                            ELSE                            
+                                print("Mengulang")                                                                        
+                    ELSE                    
+                        IF (tingkat == 1)                        
+                            print("ELSE mkwp")
+                            print("Drop Out")                        
+                        ELSE                        
+                            print("Mengulang")                                                            
+                ELSE                
+                    IF (tingkat == 1)                    
+                        print("ELSE spna")
+                        print("Drop Out")                    
+                    ELSE                    
+                        print("Mengulang")                                                
+            ELSE            
+                IF (tingkat == 1)                
+                    print("ELSE MKWU")
+                    print("Drop Out")                
+                ELSE                
+                    print("Mengulang")                                    
+        ELSE        
+            IF (tingkat == 1)            
+                print("ELSE NILAI")
+                print("Drop Out")            
+            ELSE            
+                print("Mengulang")                        
+    ELSE    
+        IF (tingkat == 1)        
+            print("ELSE IPK")
+            print("Drop Out")        
+        ELSE        
+            print("Mengulang")

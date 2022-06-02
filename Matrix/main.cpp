@@ -1,32 +1,33 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int main(){
+int main()
+{
     int baris = 2, kolom = 2; // baris ke bawah
-    int temp_a, temp_b; // kolom ke samping
+    int temp_a, temp_b;       // kolom ke samping
     int Arr[baris][kolom];
 
     system("cls");
-    for(int i = 0; i < baris; i++)
+    for (int i = 0; i < baris; i++)
     {
         for (int j = 0; j < kolom; j++)
         {
             cout << "Masukan baris [" << i << "] kolom [" << j << "] : ";
             cin >> Arr[i][j];
         }
-    }    
+    }
 
-    // Looping output matrix 
-    for(int i = 0; i < baris; i++)
+    // Looping Ouput Matrix
+    for (int i = 0; i < baris; i++)
     {
-        
-        cout << endl;
         cout << "[ ";
         for (int j = 0; j < kolom; j++)
         {
             cout << Arr[i][j] << " ";
         }
         cout << "]";
+        cout << endl;
+        /* code */
     }
 
     cout << endl;
